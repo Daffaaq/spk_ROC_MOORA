@@ -92,17 +92,17 @@ class KriteriaController extends Controller
  public function hitungBobot()
     {
         // Skala prioritas kriteria
-        $prioritas = [           
-            'harga' => 4,
-            'kualitas' => 3,
-            'pelayanan' => 6,
-            'lokasi' => 8,
-            'wifi' => 5,
-            'suasana' => 1,
-            'kenyamanan' => 2,
-            'kebersihan' => 7,
-            'menu_unik' => 9,
-            'respon_pelanggan' => 10,
+        $prioritas = [
+            'Bersifat Mendidik' => 1,
+            'Mengibur' => 4, 
+            'Bersifat Kreatif' => 5,
+            'Mengandung Kekerasan' => 8,
+            'Mengandung kata-kata kasar' => 10,
+            'mengandung unsur pornografi' => 9,
+            'kualitas tayangan' => 2,
+            'ketersediaan opsi bahasa' => 7,
+            'durasi tayang' => 6,
+            'menambah wawasan' => 3,
             // Tambahkan kriteria lain sesuai kebutuhan
         ];
 
