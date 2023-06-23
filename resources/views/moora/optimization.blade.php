@@ -60,7 +60,7 @@
                                 @foreach ($optimization as $optimization_id => $val)
                                 <tr align="center">
                                     <td>{{ $optimization_id }}</td>
-                                    <td>{{ $alternative[$optimization_id][0] }}</td>
+                                    <td>{{ $alternatives[$optimization_id][0] }}</td>
                                     <td>{{ number_format((float)$optimization[$optimization_id], 4, '.', '') }}
                                     </td>
                                 </tr>

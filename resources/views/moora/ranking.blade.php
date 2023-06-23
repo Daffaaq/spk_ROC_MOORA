@@ -2,8 +2,8 @@
 
 @section('content')
 
-@section('pages','moora')
-@section('title','ranking')
+@section('pages', 'moora')
+@section('title', 'ranking')
 
 <div class="container">
     <div class="row">
@@ -48,11 +48,12 @@
 
                             <tbody>
                                 @foreach ($optimization as $optimization_id => $val)
-                                <tr align="center">
-                                    <td>{{ $rank++ }}</td>
-                                    <td>{{ $alternative[$optimization_id][0] }}</td>
-                                    <td>{{ number_format((float)$optimization[$optimization_id], 4, '.', '') }}</td>
-                                </tr>
+                                    <tr align="center">
+                                        <td>{{ $rank++ }}</td>
+                                        {{-- <td>{{ $alternatives[$optimization_id][0] }}</td> --}}
+                                        <td>{{ $alternatives[$optimization_id] }}</td>
+                                        <td>{{ number_format((float) $optimization[$optimization_id], 4, '.', '') }}</td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

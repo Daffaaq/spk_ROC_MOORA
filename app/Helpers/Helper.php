@@ -14,6 +14,18 @@ class Helper
         return $criterias;
     }
 
+    // public static function getCriteria()
+    // {
+    //     $getCriteria = DB::table('criterias')->get();
+    //     $arrayCriteria = json_decode(json_encode($getCriteria), true);
+    //     $criteria = array();
+
+    //     foreach ($arrayCriteria as $row) {
+    //         $criteria[$row['id']] = array($row['nama'], $row['tipe'], $row['bobot']);
+    //     }
+
+    //     return $criteria;
+    // }
     public static function getCriteria()
     {
         $getCriteria = DB::table('criterias')->get();
@@ -21,7 +33,11 @@ class Helper
         $criteria = array();
 
         foreach ($arrayCriteria as $row) {
-            $criteria[$row['id']] = array($row['nama'], $row['tipe'], $row['bobot']);
+            $criteria[$row['id']] = [
+                'nama' => $row['nama'],
+                'tipe' => $row['tipe'],
+                'bobot' => $row['bobot']
+            ];;
         }
 
         return $criteria;
