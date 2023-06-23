@@ -13,15 +13,15 @@ class AddCriteriaToAlternativesTable extends Migration
      */
     public function up()
     {
-        Schema::table('alternatives', function (Blueprint $table) {
-            $table->float('vegetasi_area')->nullable()->after('kode');
-            $table->float('volume_material')->nullable()->after('vegetasi_area');
-            $table->float('luas_daerah')->nullable()->after('volume_material');
-            $table->float('volume_tampungan')->nullable()->after('luas_daerah');
-            $table->float('lama_operasi')->nullable()->after('volume_tampungan');
-            $table->float('harga_air')->nullable()->after('lama_operasi');
-            $table->float('akses_jalan')->nullable()->after('harga_air');
-        });
+        // Schema::table('alternatives', function (Blueprint $table) {
+        //     $table->float('vegetasi_area')->nullable()->after('kode');
+        //     $table->float('volume_material')->nullable()->after('vegetasi_area');
+        //     $table->float('luas_daerah')->nullable()->after('volume_material');
+        //     $table->float('volume_tampungan')->nullable()->after('luas_daerah');
+        //     $table->float('lama_operasi')->nullable()->after('volume_tampungan');
+        //     $table->float('harga_air')->nullable()->after('lama_operasi');
+        //     $table->float('akses_jalan')->nullable()->after('harga_air');
+        // });
     }
 
     /**

@@ -15,102 +15,143 @@ class AlternativeSeeder extends Seeder
     {
         DB::table('alternatives')->insert([
             [
-                'nama' => 'Dadapayam',
+                'nama' => 'Teletubise',
                 'kode' => 'A1',
-                'vegetasi_area' => 4,
-                'volume_material' => 1,
-                'luas_daerah' => 2,
-                'volume_tampungan' => 3,
-                'lama_operasi' => 4,
-                'harga_air' => 4,
-                'akses_jalan' => 3,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Mluweh',
+            ],
+            [
+                'nama' => 'Masha and the Bear',
                 'kode' => 'A2',
-                'vegetasi_area' => 1,
-                'volume_material' => 5,
-                'luas_daerah' => 1,
-                'volume_tampungan' => 1,
-                'lama_operasi' => 1,
-                'harga_air' => 1,
-                'akses_jalan' => 2,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Lebak',
+            ],
+            [
+                'nama' => 'Laptop Si Unyil',
                 'kode' => 'A3',
-                'vegetasi_area' => 4,
-                'volume_material' => 3,
-                'luas_daerah' => 1,
-                'volume_tampungan' => 2,
-                'lama_operasi' => 4,
-                'harga_air' => 1,
-                'akses_jalan' => 3,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Pakis',
+            ],
+            [
+                'nama' => 'The Boss Baby',
                 'kode' => 'A4',
-                'vegetasi_area' => 4,
-                'volume_material' => 1,
-                'luas_daerah' => 2,
-                'volume_tampungan' => 2,
-                'lama_operasi' => 4,
-                'harga_air' => 2,
-                'akses_jalan' => 3,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Jatikurung',
+            ],
+            [
+                'nama' => 'Burung Opila',
                 'kode' => 'A5',
-                'vegetasi_area' => 1,
-                'volume_material' => 1,
-                'luas_daerah' => 3,
-                'volume_tampungan' => 5,
-                'lama_operasi' => 5,
-                'harga_air' => 5,
-                'akses_jalan' => 3,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Gogodalem',
+            ],
+            [
+                'nama' => 'Jombos',
                 'kode' => 'A6',
-                'vegetasi_area' => 1,
-                'volume_material' => 2,
-                'luas_daerah' => 4,
-                'volume_tampungan' => 4,
-                'lama_operasi' => 3,
-                'harga_air' => 5,
-                'akses_jalan' => 3,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Kandangan',
+            ],
+            [
+                'nama' => 'Upin & Ipin',
                 'kode' => 'A7',
-                'vegetasi_area' => 3,
-                'volume_material' => 2,
-                'luas_daerah' => 1,
-                'volume_tampungan' => 5,
-                'lama_operasi' => 5,
-                'harga_air' => 5,
-                'akses_jalan' => 3,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Miky Mouse',
+                'kode' => 'A8',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Doraemon',
+                'kode' => 'A9',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Spongebob Squarepants',
+                'kode' => 'A10',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Lagu Dangdut',
+                'kode' => 'A11',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Cocomelon',
+                'kode' => 'A12',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Casper',
+                'kode' => 'A13',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Tayo',
+                'kode' => 'A14',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'PORORO',
+                'kode' => 'A15',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Nusa Rara',
+                'kode' => 'A16',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Tom & Jerry',
+                'kode' => 'A17',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Shincan',
+                'kode' => 'A18',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'IELTS Listening',
+                'kode' => 'A19',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'WargaNet Life',
+                'kode' => 'A20',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'We Bare Bears',
+                'kode' => 'A21',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ], [
-                'nama' => 'Ngrawan',
-                'kode' => 'A8',
-                'vegetasi_area' => 3,
-                'volume_material' => 1,
-                'luas_daerah' => 2,
-                'volume_tampungan' => 5,
-                'lama_operasi' => 5,
-                'harga_air' => 5,
-                'akses_jalan' => 2,
+                'nama' => 'Adit dan Sopo Jarwo',
+                'kode' => 'A22',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ]
+            ],
+            [
+                'nama' => 'Dora',
+                'kode' => 'A23',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
         ]);
-    }
 }
+}
+

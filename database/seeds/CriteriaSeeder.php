@@ -15,45 +15,72 @@ class CriteriaSeeder extends Seeder
     {
         DB::table('criterias')->insert([
             [
-                'nama' => 'Vegetasi area genangan embung',
+                'nama' => 'Bersifat Mendidik',
                 'tipe' => 'benefit',
-                'bobot' => 0.937,
+                'bobot' => 0.292896825,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Volume material timbunan',
-                'tipe' => 'cost',
-                'bobot' => 0.701,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Luas daerah yang akan dibebaskan',
-                'tipe' => 'cost',
-                'bobot' => 1.847,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Volume tampungan efektif',
+            ],
+            [
+                'nama' => 'Menghibur',
                 'tipe' => 'benefit',
-                'bobot' => 0.982,
+                'bobot' => 0.109563492,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Lama operasi',
+            ],
+            [
+                'nama' => 'Bersifat kreatif',
                 'tipe' => 'benefit',
-                'bobot' => 1.173,
+                'bobot' => 0.084563492,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Harga air/m3',
+            ],
+            [
+                'nama' => 'Mengandung kekerasan',
                 'tipe' => 'cost',
-                'bobot' => 0.953,
+                'bobot' => 0.03361111,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Akses jalan menuju site bendungan',
+            ],
+            [
+                'nama' => 'Mengandung kata-kata kasar',
                 'tipe' => 'cost',
-                'bobot' => 0.752,
+                'bobot' => 0.01,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Mengandung unsur pornografi',
+                'tipe' => 'cost',
+                'bobot' => 0.021111111,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Kualitas tayangan',
+                'tipe' => 'benefit',
+                'bobot' => 0.192896825,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Ketersediaan opsi bahasa',
+                'tipe' => 'cost',
+                'bobot' => 0.047896825,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Durasi tayang',
+                'tipe' => 'benefit',
+                'bobot' => 0.064563492,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'nama' => 'Menambah wawasan',
+                'tipe' => 'benefit',
+                'bobot' => 0.142896825,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]

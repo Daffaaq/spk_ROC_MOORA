@@ -2,8 +2,8 @@
 
 @section('content')
 
-@section('pages','moora')
-@section('title','normalization')
+@section('pages', 'moora')
+@section('title', 'normalization')
 
 <div class="container">
     <div class="row">
@@ -16,20 +16,20 @@
                                 <tr align="center">
                                     <th>#</th>
                                     @foreach (array_keys(current($matrix)) as $indexCriteria)
-                                    <th>C{{ $indexCriteria }}</th>
+                                        <th>C{{ $indexCriteria }}</th>
                                     @endforeach
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @foreach (array_keys($matrix) as $indexAlternative)
-                                <tr align="center">
-                                    <td>A{{ $indexAlternative }}</td>
-                                    @foreach (array_keys($matrix[$indexAlternative]) as $indexCriteria)
-                                    <td>{{ number_format((float)$normal[$indexAlternative][$indexCriteria], 4, '.', '') }}
-                                    </td>
-                                    @endforeach
-                                </tr>
+                                    <tr align="center">
+                                        <td>A{{ $indexAlternative }}</td>
+                                        @foreach (array_keys($matrix[$indexAlternative]) as $indexCriteria)
+                                            <td>{{ number_format((float) $normal[$indexAlternative][$indexCriteria], 4, '.', '') }}
+                                            </td>
+                                        @endforeach
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

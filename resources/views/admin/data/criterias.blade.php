@@ -2,11 +2,10 @@
 
 @section('content')
 
-@section('pages','data')
-@section('title','criterias')
+@section('pages', 'data')
+@section('title', 'criterias')
 
 @push('scripts')
-
 @endpush
 
 <div class="container">
@@ -23,22 +22,22 @@
                                     <th>Criteria</th>
                                     <th>Type</th>
                                     <th>Weight</th>
-                                    <th>Action</th>
+                                    {{-- <th>Action</th> --}}
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @foreach ($criterias as $criteria)
-                                <tr align="center">
-                                    <td>{{ $criteria->id }}</td>
-                                    <td>{{ $criteria->nama }}</td>
-                                    <td>{{ $criteria->tipe }}</td>
-                                    <td>{{ $criteria->bobot }}</td>
-                                    <td>
+                                    <tr align="center">
+                                        <td>{{ $criteria->id }}</td>
+                                        <td>{{ $criteria->nama }}</td>
+                                        <td>{{ $criteria->tipe }}</td>
+                                        <td>{{ $criteria->bobot }}</td>
+                                        {{-- <td>
                                         <a class="btn btn-info" href="{{ route('criteria.edit', $criteria->id) }}"><i
                                                 class="fas fa-edit"></i></a>
-                                    </td>
-                                </tr>
+                                    </td> --}}
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

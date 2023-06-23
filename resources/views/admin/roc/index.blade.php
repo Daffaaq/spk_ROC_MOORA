@@ -2,11 +2,10 @@
 
 @section('content')
 
-@section('pages','data')
-@section('title','alternatives')
+@section('pages', 'data')
+@section('title', 'alternatives')
 
 @push('scripts')
-
 @endpush
 
 
@@ -154,24 +153,17 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($alternatives as $data)
-                                <tr align="center">
-                                    <td>{{ $data->id }}</td>
-                                    <td>{{ $data->nama }}</td>
-                                    <td>{{ $data->kode }}</td>
-                                    @foreach ($values as $value)
+                                @foreach ($alternatives as $alternative)
+                                    <tr align="center">
+                                        <td>{{ $alternative->id }}</td>
+                                        <td>{{ $alternative->nama }}</td>
+                                        <td>{{ $alternative->kode }}</td>
+                                        @foreach ($values as $value)
                                             @if ($value->alternative_id == $alternative->id)
                                                 <td>{{ $value->value }}</td>
                                             @endif
-                                    @endforeach
-                                    {{-- <td>{{ $data->vegetasi_area }}</td>
-                                    <td>{{ $data->volume_material }}</td>
-                                    <td>{{ $data->luas_daerah }}</td>
-                                    <td>{{ $data->volume_tampungan }}</td>
-                                    <td>{{ $data->lama_operasi }}</td>
-                                    <td>{{ $data->harga_air }}</td>
-                                    <td>{{ $data->akses_jalan }}</td>
-                                    <td>
+                                        @endforeach
+                                        {{-- <td>
                                         <a class="btn btn-icon btn-info"
                                             href="{{ route('alternative.edit', $data->id) }}"><i
                                                 class="fas fa-edit"></i></a>
@@ -210,7 +202,7 @@
                                             </div>
                                         </div>
                                     </td> --}}
-                                </tr>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

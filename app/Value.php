@@ -15,12 +15,12 @@ class Value extends Model
 
     public function alternative()
     {
-        return $this->hasOne(Alternative::class);
+        return $this->belongsTo(Alternative::class);
     }
 
     public function criteria()
     {
-        return $this->hasOne(Criteria::class);
+        return $this->belongsTo(Criteria::class);
     }
 
     public function classification()

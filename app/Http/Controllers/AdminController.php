@@ -42,11 +42,26 @@ class AdminController extends Controller
         return view('admin/map');
     }
 
+    function dataawalread()
+    {
+        $values = Value::all();
+
+        $alternatives = Alternative::all();
+        $criterias = Criteria::all();
+        return view('admin/data_awal/index', compact('alternatives', 'criterias', 'values'));
+    }
+
+
     public function alternativeRead()
     {
+        $values = Value::all();
+
         $alternatives = Alternative::all();
-        $classifications = Criteria::join('classifications', 'classifications.criteria_id', '=', 'criterias.id')->get();
-        return view('admin/data/alternatives', compact('alternatives', 'classifications'));
+        $criterias = Criteria::all();
+        return view('admin/data_awal/index', compact('alternatives', 'criterias', 'values'));
+        // $alternatives = Alternative::all();
+        // $classifications = Criteria::join('classifications', 'classifications.criteria_id', '=', 'criterias.id')->get();
+        // return view('admin/data/alternatives', compact('alternatives', 'classifications'));
     }
 
     public function alternativeCreate(Request $request)
@@ -232,9 +247,55 @@ class AdminController extends Controller
         $data->delete();
 
         session()->flash('danger', 'User deleted');
-        
+
         return back();
     }
+
+    public function hitungBobot()
+    {
+        // Skala prioritas kriteria
+        $prioritas = [
+            'Bersifat Mendidik' => 1,
+            'Mengibur' => 4,
+            'Bersifat Kreatif' => 5,
+            'Mengandung Kekerasan' => 8,
+            'Mengandung kata-kata kasar' => 10,
+            'mengandung unsur pornografi' => 9,
+            'kualitas tayangan' => 2,
+            'ketersediaan opsi bahasa' => 7,
+            'durasi tayang' => 6,
+            'menambah wawasan' => 3,
+            // Tambahkan kriteria lain sesuai kebutuhan
+        ];
+
+        // Perangkingan kriteria berdasarkan skala prioritas
+        $perangkingan = collect($prioritas)->sortDesc()->values();
+
+        // Hitung total peringkat
+        $totalPeringkat = $perangkingan->sum();
+
+        // Tentukan bobot relatif untuk setiap kriteria
+        $criterias = Criteria::all();
+        foreach ($criterias as $item) {
+            $peringkat = $perangkingan->search($item->nama) + 1;
+            $item->bobot = $peringkat / $totalPeringkat;
+            $item->save();
+        }
+
+        // Mengambil kembali data kriteria dengan bobot yang telah disimpan
+        // $criterias = Criteria::all();
+
+        return $criterias;
+    }
+
+    // Di dalam controller
+    public function criterias()
+    {
+        $criterias = $this->hitungBobot();
+
+        return view('admin.data.criterias', compact('criterias'));
+    }
+
 
     public function editProfile()
     {

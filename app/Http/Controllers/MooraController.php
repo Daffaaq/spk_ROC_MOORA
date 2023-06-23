@@ -13,39 +13,40 @@ class MooraController extends Controller
 
     public function matrix()
     {
-        $matrix = Helper::valMatrix();
+        $matrix = Helper::getMatrix();
 
-        return view('moora/matrix', compact('matrix'));
+        return view('moora.matrix', compact('matrix'));
     }
 
     public function normalization()
     {
         $normal = Helper::valNormal();
-        $matrix = Helper::valMatrix();
-
-        return view('moora/normalization', compact('normal', 'matrix'));
+        $matrix = Helper::getMatrix();
+        // return $normal;
+        return view('moora.normalization', compact('normal', 'matrix'));
     }
 
     public function optimization()
     {
-        $alternative = Helper::getAlternative();
+        $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
 
-        return view('moora/optimization', compact('optimization', 'alternative'));
+        return view('moora.optimization', compact('optimization', 'alternatives'));
     }
 
     public function ranking()
     {
-        $alternative = Helper::getAlternative();
+        $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
 
-        //--mengurutkan data secara descending dengan tetap mempertahankan key/index array-nya
+        // Mengurutkan data secara descending dengan tetap mempertahankan key/index array-nya
         arsort($optimization);
-        //-- mendapatkan key/index item array yang pertama
+
+        // Mendapatkan key/index item array yang pertama
         $index = key($optimization);
 
         $rank = 1;
 
-        return view('moora/ranking', compact('optimization', 'alternative', 'rank'));
+        return view('moora.ranking', compact('optimization', 'alternatives', 'rank'));
     }
 }

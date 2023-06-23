@@ -70,6 +70,9 @@
                                 href="{{ route('admin.map') }}"><i class="fas fa-map"></i>
                                 <span>Map</span></a></li>
                         <li class="menu-header">Info</li>
+                        <li class="nav-item {{ (request()->is('admin/dataawal')) ? "active" : '' }}"><a
+                                class="nav-link" href="{{ route('dataawal.read') }}"><i class="far fa-square"></i>
+                                <span>Data Awal</span></a></li>
                         <li class="nav-item dropdown {{ (request()->is('admin/data*')) ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-columns"></i> <span>Data</span></a>

@@ -10,7 +10,7 @@ class Criteria extends Model
 
     public function value()
     {
-        return $this->hasOne(Value::class);
+        return $this->hasmany(Value::class);
     }
     
     public function classification()
