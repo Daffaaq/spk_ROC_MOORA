@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card rounded card-primary">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -62,7 +62,7 @@
                                     <tr align="center">
                                         <td>{{ $alternative_id }}</td>
                                         {{-- <td>{{ $alternative['nama'] }}</td> --}} 
-                                        <td>{{ $alternative[0] }}</td>
+                                        <td>{{ $alternative }}</td>
                                         @foreach ($criteria as $criteria_id => $c)
                                             <td>{{ number_format((float) $optimization[$alternative_id][$criteria_id], 4, '.', '') }}
                                             </td>
@@ -73,33 +73,9 @@
 
                             </tbody>
                         </table> 
-
-                        {{-- <table width="100%" class="table table-striped table-bordered table-hover table-md">
-                            <thead>
-                                <tr align="center">
-                                    <th>ID</th>
-                                    <th>Alternatives</th>
-                                    <th>Optimization Value</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @foreach ($optimization as $optimization_id => $val)
-                                <tr align="center">
-                                    <td>{{ $optimization_id }}</td>
-                                    <td>{{ $alternatives[$optimization_id][0] }}</td>
-                                    <td>{{ number_format((float)$optimization[$optimization_id], 4, '.', '') }}
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table> --}}
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <img src="{{ url('img/irasutoya/business_crowdfunding.png') }}" class="img-fluid" alt="">
         </div>
     </div>
 </div>

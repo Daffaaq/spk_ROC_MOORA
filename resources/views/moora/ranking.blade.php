@@ -77,7 +77,7 @@
                                 @foreach ($rankingData as $alternative_id => $data)
                                     <tr align="center">
                                         <td>{{ $rank++ }}</td>
-                                        <td>{{ $alternatives[$alternative_id][0] }}</td>
+                                        <td>{{ $alternatives[$alternative_id] }}</td>
                                         <td>{{ number_format((float) $data['benefitTotal'], 4, '.', '') }}</td>
                                         <td>{{ number_format((float) $data['costTotal'], 4, '.', '') }}</td>
                                         <td>{{ number_format((float) $data['benefitMinusCost'], 4, '.', '') }}</td>

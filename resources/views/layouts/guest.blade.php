@@ -472,15 +472,15 @@
                                         <tr>
                                             <th>Rank</th>
                                             <th>Alternatives</th>
-                                            <th>Optimization</th>
+                                            <th>Benefit - Cost (Yi)</th>
                                         </tr>
                                     </thead>
                                     <tbody style="text-align:center; font-size:13px">
-                                        @foreach ($optimization as $optimization_id => $val)
+                                        @foreach ($rankingData as $alternative_id => $data)
                                         <tr align="center">
                                             <td>{{ $rank++ }}</td>
-                                            <td>{{ $alternative[$optimization_id][0] }}</td>
-                                            <td>{{ number_format((float)$optimization[$optimization_id], 4, '.', '') }}
+                                            <td>{{ $alternative[$alternative_id][0] }}</td>
+                                            <td>{{ number_format((float) $data['benefitMinusCost'], 4, '.', '') }}</td>
                                             </td>
                                         </tr>
                                         @endforeach

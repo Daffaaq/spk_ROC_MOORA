@@ -16,18 +16,19 @@ class GuestController extends Controller
         $countUsers = User::count();
         $criterias = Criteria::all();
         $alternatives = Alternative::all();
-        $matrix = Helper::valMatrix();
+        $matrix = Helper::getMatrix();
 
         $alternative = Helper::getAlternative();
         $optimization = Helper::valOptimize();
+        $rankingData = Helper::ranking();
 
         //--mengurutkan data secara descending dengan tetap mempertahankan key/index array-nya
-        arsort($optimization);
+        arsort($rankingData);
         //-- mendapatkan key/index item array yang pertama
-        $index = key($optimization);
+        $index = key($rankingData);
 
         $rank = 1;
 
-        return view ('home', compact('countAlternatives', 'countCriterias', 'countValues', 'countUsers', 'criterias', 'alternatives', 'matrix', 'optimization', 'alternative', 'rank'));
+        return view ('home', compact('countAlternatives', 'countCriterias', 'countValues', 'countUsers', 'criterias', 'alternatives', 'matrix', 'optimization', 'alternative', 'rank', 'rankingData'));
     }
 }

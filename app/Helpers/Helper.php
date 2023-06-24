@@ -51,7 +51,7 @@ class Helper
         foreach ($getAlternatives as $alternative) {
             $alternatives[$alternative->id] = $alternative->nama;
         }
-
+        // dd($alternatives);
         return $alternatives;
     }
 

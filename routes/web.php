@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
- 
+
 // Guest
 Route::get('/', 'GuestController@home')->name('guest.home');
+// Route::get('/', 'HomeController@index')->name('home');
 
 // Admin
 Route::prefix('admin')->middleware('auth')->group(function () {

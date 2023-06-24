@@ -11,7 +11,7 @@
                 <div class="p-4 m-3">
                     <img src="{{ url('img/3.png') }}" alt="logo" width="80"
                         class="shadow-light rounded-circle mb-5 mt-2">
-                    <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Moora</span>
+                    <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">RoC-Moora</span>
                     </h4>
                     <p class="text-muted">Before you get started, you must login or register if you don't already
                         have an account.</p>
@@ -75,22 +75,20 @@
                     </form>
 
                     <div class="text-center mt-5 text-small">
-                        Copyright &copy; Muhammad Farrell Denando. Powered by Stisla
+                        Copyright &copy; Daffa Aqila Rahmatullah & Dherisma Hanindita. Powered by Stisla
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom"
-                data-background="{{ url('img/unsplash/login-bg2.jpg') }}">
+                data-background="{{ url('img/unsplash/login-jti.jpg') }}">
                 <div class="absolute-bottom-left index-2">
                     <div class="text-light p-5 pb-2">
                         <div class="mb-5 pb-3">
-                            <h1 class="mb-2 display-4 font-weight-bold">Retention Basin</h1>
-                            <h5 class="font-weight-normal text-muted-transparent">Semarang, Indonesia</h5>
+                            <h1 class="mb-2 display-4 font-weight-bold">Sistem Pendukung Keputusan</h1>
+                            <h5 class="font-weight-normal text-muted-transparent">Malang, Indonesia</h5>
                         </div>
-                        Photo by <a class="text-light bb" target="_blank"
-                            href="https://unsplash.com/photos/BdCl4IdiLWo">Sandro Meier</a> on <a
-                            class="text-light bb" target="_blank" href="https://unsplash.com">Unsplash</a>
+                        Photo by <span class="text-light bb" target="_blank">Daffa Aqila Rahmatullah</span>
                     </div>
                 </div>
             </div>

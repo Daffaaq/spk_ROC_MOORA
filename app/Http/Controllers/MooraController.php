@@ -38,6 +38,7 @@ class MooraController extends Controller
         $criteria = Helper::getCriteria();
         $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
+        // dd($alternatives);
         return view('moora.optimization', compact('optimization', 'alternatives', 'criteria'));
     }
 
