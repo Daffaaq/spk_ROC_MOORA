@@ -42,7 +42,10 @@
                                 <tr align="center">
                                     <th>Rank</th>
                                     <th>Alternatives</th>
-                                    <th>Optimization Ranked</th>
+                                    @foreach (array_keys(current($matrix)) as $indexCriteria)
+                                        <th>C{{ $indexCriteria }}</th>
+                                    @endforeach
+                                    {{-- <th>Optimization Ranked</th> --}}
                                 </tr>
                             </thead>
 

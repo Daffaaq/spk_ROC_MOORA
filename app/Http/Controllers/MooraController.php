@@ -25,13 +25,20 @@ class MooraController extends Controller
         // return $normal;
         return view('moora.normalization', compact('normal', 'matrix'));
     }
+    // public function normalization()
+    // {
+    //     $normalizedMatrix = Helper::mooraNormalization();
+    //     $matrix = Helper::getMatrix();
+    //     // return $normal;
+    //     return view('moora.normalization', compact('normalizedMatrix', 'matrix'));
+    // }
 
     public function optimization()
     {
+        $criteria = Helper::getCriteria();
         $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
-
-        return view('moora.optimization', compact('optimization', 'alternatives'));
+        return view('moora.optimization', compact('optimization', 'alternatives', 'criteria'));
     }
 
     public function ranking()

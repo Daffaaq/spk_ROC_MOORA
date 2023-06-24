@@ -2,8 +2,8 @@
 
 @section('content')
 
-@section('pages','moora')
-@section('title','optimization')
+@section('pages', 'moora')
+@section('title', 'optimization')
 
 <div class="container">
     <div class="row">
@@ -52,6 +52,33 @@
                                 <tr align="center">
                                     <th>ID</th>
                                     <th>Alternatives</th>
+                                    @foreach ($criteria as $criteria_id => $c)
+                                        <th>C{{ $criteria_id }}</th>
+                                    @endforeach
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($alternatives as $alternative_id => $alternative)
+                                    <tr align="center">
+                                        <td>{{ $alternative_id }}</td>
+                                        {{-- <td>{{ $alternative['nama'] }}</td> --}} 
+                                        <td>{{ $alternative[0] }}</td>
+                                        @foreach ($criteria as $criteria_id => $c)
+                                            <td>{{ number_format((float) $optimization[$alternative_id][$criteria_id], 4, '.', '') }}
+                                            </td>
+                                        @endforeach
+
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table> 
+
+                        {{-- <table width="100%" class="table table-striped table-bordered table-hover table-md">
+                            <thead>
+                                <tr align="center">
+                                    <th>ID</th>
+                                    <th>Alternatives</th>
                                     <th>Optimization Value</th>
                                 </tr>
                             </thead>
@@ -66,7 +93,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                 </div>
             </div>

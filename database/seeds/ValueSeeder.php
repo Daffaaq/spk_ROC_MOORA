@@ -33,16 +33,13 @@ class ValueSeeder extends Seeder
         $NusaRara = [4, 5, 4, 4, 4, 3, 5, 5, 4, 3];
         $TomJerry = [3, 5, 4, 4, 4, 4, 5, 3, 4, 4];
         $Shincan = [3, 3, 3, 3, 3, 4, 4, 2, 5, 3];
-        $IELTSListening = [5, 4, 4, 5, 4, 5, 5, 5, 5, 5];
-        $WargaNetLife = [4, 5, 5, 3, 4, 5, 5, 1, 5, 5];
-        $WebareBears = [4, 5, 4, 4, 5, 5, 4, 5, 4, 4];
 
         $ratings = array(
-            $Teletubise, $MashaandtheBear, $LaptopSiUnyil, $TheBossBaby, $Burungopila, $Jombos, $UpinIpin, $Mikymouse, $Doraemon, $SpongebobSquarepants, $LaguDangdut, $cocomelon, $Casper, $Tayo, $PORORO, $NusaRara, $TomJerry, $Shincan, $IELTSListening, $WargaNetLife, $WebareBears, $Aditdansopojarwo, $Dora
+            $Teletubise, $MashaandtheBear, $LaptopSiUnyil, $TheBossBaby, $Burungopila, $Jombos, $UpinIpin, $Mikymouse, $Doraemon, $SpongebobSquarepants, $LaguDangdut, $cocomelon, $Casper, $Tayo, $PORORO, $NusaRara, $TomJerry, $Shincan,  $Aditdansopojarwo, $Dora
         );
 
 
-        for ($i = 1; $i <= 23; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
             for ($j = 1; $j <= count($Dora); $j++) {
 
                 DB::table('values')->insert([

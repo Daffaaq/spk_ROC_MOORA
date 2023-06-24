@@ -71,27 +71,6 @@ class Helper
         return $valMatrix;
     }
 
-    // public static function calculateMooraNormalization()
-    // {
-    //     $criteria = Helper::getCriteria();
-    //     $alternatives = Helper::getAlternative();
-    //     $matrix = Helper::getMatrix();
-
-    //     $normalizedMatrix = $matrix;
-    //     foreach ($criteria as $criteria_id => $c) {
-    //         // Menghitung nilai minimum dan maksimum untuk kriteria
-    //         $minValue = min(array_column($matrix, $criteria_id));
-    //         $maxValue = max(array_column($matrix, $criteria_id));
-
-    //         // Normalisasi nilai berdasarkan rumus
-    //         foreach ($alternatives as $alternative_id => $a) {
-    //             $normalizedMatrix[$alternative_id][$criteria_id] = ($matrix[$alternative_id][$criteria_id] - $minValue) / ($maxValue - $minValue);
-    //         }
-    //     }
-
-    //     return $normalizedMatrix;
-    // }
-
     public static function valNormal()
     {
         $criteria = Helper::getCriteria();
@@ -116,20 +95,76 @@ class Helper
         return $normal;
     }
 
+    // public static function valOptimize()
+    // {
+    //     $criteria = Helper::getCriteria();
+    //     $alternatives = Helper::getAlternative();
+    //     $normal = Helper::valNormal();
+
+    //     $optimization = [];
+    //     foreach ($alternatives as $alternative_id => $alternative) {
+    //         $optimization[$alternative_id] = 0;
+    //         foreach ($criteria as $criteria_id => $c) {
+    //             $weight = $criteria[$criteria_id]['bobot'];
+    //             $optimization[$alternative_id] += $normal[$alternative_id][$criteria_id] * ($c['tipe'] == 'benefit' ? $weight : -$weight);
+    //         }
+    //     }
+
+    //     return $optimization;
+    // }
     public static function valOptimize()
     {
+        // $criteria = Helper::getCriteria();
+        // $alternative = Helper::getAlternative();
+        // $normal = Helper::valNormal();
+
+        // $optimization = array();
+        // foreach ($alternative as $alternative_id => $a) {
+        //     $optimization[$alternative_id] = 0;
+        //     foreach ($criteria as $criteria_id => $c) {
+        //         $optimization[$alternative_id] += $normal[$alternative_id][$criteria_id] * ($c[1] == 'benefit' ? 1 : -1) * $c[2];
+        //     }
+        // }
         $criteria = Helper::getCriteria();
         $alternatives = Helper::getAlternative();
         $normal = Helper::valNormal();
 
-        $optimization = [];
+        $optimization = $normal;
         foreach ($alternatives as $alternative_id => $alternative) {
-            $optimization[$alternative_id] = 0;
             foreach ($criteria as $criteria_id => $c) {
-                $weight = $criteria[$criteria_id]['bobot'];
-                $optimization[$alternative_id] += $normal[$alternative_id][$criteria_id] * ($c['tipe'] == 'benefit' ? $weight : -$weight);
+                $optimization[$alternative_id][$criteria_id] *= ($c['tipe'] == 'benefit' ? 1 : -1) * $c['bobot'];
             }
         }
+
+        // dd($optimization);
+
+        return $optimization;
+    // }
+    // public static function valOptimize()
+    // {
+    //     $criteria = Helper::getCriteria();
+    //     $alternatives = Helper::getAlternative();
+    //     $normal = Helper::valNormal();
+
+    //     $optimization = $normal;
+    //     foreach ($alternatives as $alternative_id => $alternative) {
+    //         $optimization[$alternative_id] = 0;
+    //         $totalWeight = 0;
+    //         foreach ($criteria as $criteria_id => $c) {
+    //             $optimization[$alternative_id] += $normal[$alternative_id][$criteria_id] * $c['bobot'];
+    //             // dd($optimization);
+    //             // $optimization[$alternative_id] += $normal[$alternative_id][$criteria_id] * ($c['tipe'] == 'benefit' ? 1 : -1) * $c['bobot'];
+    //             $totalWeight += $c['bobot'];
+    //         }
+    //         $optimization[$alternative_id] /= $totalWeight;
+    //     }
+        // foreach ($criteria as $criteria_id => $c) {
+        //     $optimization[$criteria_id] = 0;
+        //     foreach ($alternatives as $alternative_id => $alternative) {
+        //         $optimization[$criteria_id] += $normal[$alternative_id][$criteria_id] * $c['bobot'];
+        //     }
+        // }
+
 
         return $optimization;
     }

@@ -121,33 +121,16 @@ class AlternativeSeeder extends Seeder
                 'kode' => 'A18',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+            ], 
             [
-                'nama' => 'IELTS Listening',
+                'nama' => 'Adit dan Sopo Jarwo',
                 'kode' => 'A19',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'WargaNet Life',
-                'kode' => 'A20',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'nama' => 'We Bare Bears',
-                'kode' => 'A21',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], [
-                'nama' => 'Adit dan Sopo Jarwo',
-                'kode' => 'A22',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
                 'nama' => 'Dora',
-                'kode' => 'A23',
+                'kode' => 'A20',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],

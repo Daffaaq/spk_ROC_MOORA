@@ -7,7 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 class Alternative extends Model
 {
     protected $table = 'alternatives';
-    protected $fillable = ['nama', 'kode', 'vegetasi_area', 'volume_material', 'luas_daerah', 'volume_tampungan', 'lama_operasi', 'harga_air', 'akses_jalan'];
+    protected $fillable = [
+        'nama',
+        'kode',
+        'Teletubise',
+        'Masha and the Bear',
+        'Laptop Si Unyil',
+        'The Boss Baby',
+        'Burung Opila',
+        'Jombos',
+        'Upin & Ipin',
+        'Miky Mouse',
+        'Doraemon',
+        'Spongebob Squarepants',
+        'Lagu Dangdut',
+        'Cocomelon',
+        'Casper',
+        'Tayo',
+        'PORORO',
+        'Nusa Rara',
+        'Tom & Jerry',
+        'Shincan',
+        'Adit dan Sopo Jarwo',
+        'Dora'
+    ];
 
     public function value()
     {
@@ -18,5 +41,4 @@ class Alternative extends Model
     {
         return $this->hasOne(Criteria::class);
     }
-
 }
