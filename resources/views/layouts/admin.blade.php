@@ -145,7 +145,9 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2021 <div class="bullet"></div><a href="#">Muhammad Farrell Denando</a>
+                    Copyright &copy; 2023 <div class="bullet"></div><a href="#">
+                        Daffa Aqila Rahmatullah & Dherisma Hanindita
+                    </a>
                 </div>
                 <div class="footer-right">
                     Powered by <a href="https://getstisla.com">Stisla</a>
