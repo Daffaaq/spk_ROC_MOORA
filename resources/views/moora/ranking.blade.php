@@ -60,26 +60,31 @@
     </tbody>
 </table> --}}
 
-<table width="100%" class="table table-striped table-bordered table-hover table-md">
-    <thead>
-        <tr align="center">
-            <th>Alternatives</th>
-            <th>Total Benefit (max)</th>
-            <th>Total Cost (min)</th>
-            <th>Benefit - Cost (Yi)</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($alternatives as $alternative_id => $alternative)
-            <tr align="center">
-                <td>{{ $alternative[0] }}</td>
-                <td>{{ number_format((float) $rankingData['benefitTotals'][$alternative_id], 4, '.', '') }}</td>
-                <td>{{ number_format((float) $rankingData['costTotals'][$alternative_id], 4, '.', '') }}</td>
-                <td>{{ number_format((float) ($rankingData['benefitTotals'][$alternative_id] - $rankingData['costTotals'][$alternative_id]), 4, '.', '') }}</td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+                        <table width="100%" class="table table-striped table-bordered table-hover table-md">
+                            <thead>
+                                <tr align="center">
+                                    <th>Rank</th>
+                                    <th>Alternatives</th>
+                                    <th>Total Benefit (max)</th>
+                                    <th>Total Cost (min)</th>
+                                    <th>Benefit - Cost (Yi)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $rank = 1;
+                                @endphp
+                                @foreach ($rankingData as $alternative_id => $data)
+                                    <tr align="center">
+                                        <td>{{ $rank++ }}</td>
+                                        <td>{{ $alternatives[$alternative_id][0] }}</td>
+                                        <td>{{ number_format((float) $data['benefitTotal'], 4, '.', '') }}</td>
+                                        <td>{{ number_format((float) $data['costTotal'], 4, '.', '') }}</td>
+                                        <td>{{ number_format((float) $data['benefitMinusCost'], 4, '.', '') }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
 
 
 

@@ -177,8 +177,7 @@ class Helper
         $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
 
-        $benefitTotals = array();
-        $costTotals = array();
+        $rankedData = array();
 
         foreach ($alternatives as $alternative_id => $alternative) {
             $benefitTotal = 0;
@@ -192,14 +191,20 @@ class Helper
                 }
             }
 
-            $benefitTotals[$alternative_id] = $benefitTotal;
-            $costTotals[$alternative_id] = $costTotal;
+            $benefitMinusCost = $benefitTotal - $costTotal;
+
+            $rankedData[$alternative_id] = [
+                'benefitTotal' => $benefitTotal,
+                'costTotal' => $costTotal,
+                'benefitMinusCost' => $benefitMinusCost,
+            ];
         }
 
-        return [
-            'benefitTotals' => $benefitTotals,
-            'costTotals' => $costTotals,
-        ];
+        // Sorting rankedData based on benefitMinusCost in descending order
+        arsort($rankedData);
+
+        return $rankedData;
     }
+
 
 }
