@@ -132,7 +132,9 @@ class Helper
         $optimization = $normal;
         foreach ($alternatives as $alternative_id => $alternative) {
             foreach ($criteria as $criteria_id => $c) {
-                $optimization[$alternative_id][$criteria_id] *= ($c['tipe'] == 'benefit' ? 1 : -1) * $c['bobot'];
+                $factor = ($c['tipe'] == 'cost') ? 1 : 1; // Menggunakan faktor 1 untuk semua kriteria
+                $optimization[$alternative_id][$criteria_id] = $normal[$alternative_id][$criteria_id] * $factor * $c['bobot'];
+                // $optimization[$alternative_id][$criteria_id] *= ($c['tipe'] == 'benefit' ? 1 : -1) * $c['bobot'];
             }
         }
 
@@ -166,6 +168,38 @@ class Helper
         // }
 
 
-        return $optimization;
+        // return $optimization;
     }
+
+    public static function ranking()
+    {
+        $criteria = Helper::getCriteria();
+        $alternatives = Helper::getAlternative();
+        $optimization = Helper::valOptimize();
+
+        $benefitTotals = array();
+        $costTotals = array();
+
+        foreach ($alternatives as $alternative_id => $alternative) {
+            $benefitTotal = 0;
+            $costTotal = 0;
+
+            foreach ($criteria as $criteria_id => $c) {
+                if ($c['tipe'] == 'benefit') {
+                    $benefitTotal += $optimization[$alternative_id][$criteria_id];
+                } elseif ($c['tipe'] == 'cost') {
+                    $costTotal += $optimization[$alternative_id][$criteria_id];
+                }
+            }
+
+            $benefitTotals[$alternative_id] = $benefitTotal;
+            $costTotals[$alternative_id] = $costTotal;
+        }
+
+        return [
+            'benefitTotals' => $benefitTotals,
+            'costTotals' => $costTotals,
+        ];
+    }
+
 }

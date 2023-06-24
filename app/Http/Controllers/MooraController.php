@@ -43,17 +43,11 @@ class MooraController extends Controller
 
     public function ranking()
     {
+        $criteria = Helper::getCriteria();
         $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
+        $rankingData = Helper::ranking();
 
-        // Mengurutkan data secara descending dengan tetap mempertahankan key/index array-nya
-        arsort($optimization);
-
-        // Mendapatkan key/index item array yang pertama
-        $index = key($optimization);
-
-        $rank = 1;
-
-        return view('moora.ranking', compact('optimization', 'alternatives', 'rank'));
+        return view('moora.ranking', compact('optimization', 'alternatives', 'criteria', 'rankingData'));
     }
 }

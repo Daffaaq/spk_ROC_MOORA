@@ -37,29 +37,52 @@
             <div class="card rounded card-primary">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table width="100%" class="table table-striped table-bordered table-hover table-md">
-                            <thead>
-                                <tr align="center">
-                                    <th>Rank</th>
-                                    <th>Alternatives</th>
-                                    @foreach (array_keys(current($matrix)) as $indexCriteria)
-                                        <th>C{{ $indexCriteria }}</th>
-                                    @endforeach
-                                    {{-- <th>Optimization Ranked</th> --}}
-                                </tr>
-                            </thead>
+                        {{-- <table width="100%" class="table table-striped table-bordered table-hover table-md">
+    <thead>
+        <tr align="center">
+            <th>ID</th>
+            <th>Alternatives</th>
+            @foreach ($criteria as $criteria_id => $c)
+                <th>C{{ $criteria_id }}</th>
+            @endforeach
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($alternatives as $alternative_id => $alternative)
+            <tr align="center">
+                <td>{{ $alternative_id }}</td>
+                <td>{{ $alternative[0] }}</td>
+                @foreach ($criteria as $criteria_id => $c)
+                    <td>{{ number_format((float) $optimization[$alternative_id][$criteria_id], 4, '.', '') }}</td>
+                @endforeach
+            </tr>
+        @endforeach
+    </tbody>
+</table> --}}
 
-                            <tbody>
-                                @foreach ($optimization as $optimization_id => $val)
-                                    <tr align="center">
-                                        <td>{{ $rank++ }}</td>
-                                        {{-- <td>{{ $alternatives[$optimization_id][0] }}</td> --}}
-                                        <td>{{ $alternatives[$optimization_id] }}</td>
-                                        <td>{{ number_format((float) $optimization[$optimization_id], 4, '.', '') }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+<table width="100%" class="table table-striped table-bordered table-hover table-md">
+    <thead>
+        <tr align="center">
+            <th>Alternatives</th>
+            <th>Total Benefit (max)</th>
+            <th>Total Cost (min)</th>
+            <th>Benefit - Cost (Yi)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($alternatives as $alternative_id => $alternative)
+            <tr align="center">
+                <td>{{ $alternative[0] }}</td>
+                <td>{{ number_format((float) $rankingData['benefitTotals'][$alternative_id], 4, '.', '') }}</td>
+                <td>{{ number_format((float) $rankingData['costTotals'][$alternative_id], 4, '.', '') }}</td>
+                <td>{{ number_format((float) ($rankingData['benefitTotals'][$alternative_id] - $rankingData['costTotals'][$alternative_id]), 4, '.', '') }}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
+
+
                     </div>
                 </div>
             </div>
