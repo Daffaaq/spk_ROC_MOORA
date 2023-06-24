@@ -134,12 +134,29 @@
     </div> --}}
 
     <div class="row">
+
         <div class="col-12">
+
             <div class="card rounded card-primary">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table width="100%" class="table table-striped table-bordered table-hover table-md"
                             id="DataTables">
+                            <div class="show-import" style="display: block">
+                                <div class="custom-file">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                        <label class="custom-file-label" for="file-upload">Choose File</label>
+                                        <input type="file" id="file-upload" class="custom-file-input"
+                                            name="import_file">
+                                        <br /> <br />
+                                        <div class="footer text-right">
+                                            <button class="btn btn-primary">Import File</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <br>
                             <thead>
                                 <tr align="center">
                                     <th>ID</th>
