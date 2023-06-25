@@ -15,125 +15,126 @@ class AlternativeSeeder extends Seeder
     {
         DB::table('alternatives')->insert([
             [
-                'nama' => 'Teletubise',
+                'nama' => 'Adit dan Sopo Jarwo',
                 'kode' => 'A1',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Masha and the Bear',
+                'nama' => 'Upin & Ipin',
                 'kode' => 'A2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Laptop Si Unyil',
+                'nama' => 'Teletubise',
                 'kode' => 'A3',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'The Boss Baby',
+                'nama' => 'Masha and the Bear',
                 'kode' => 'A4',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Burung Opila',
+                'nama' => 'Laptop Si Unyil',
                 'kode' => 'A5',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Jombos',
+                'nama' => 'The Boss Baby',
                 'kode' => 'A6',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Upin & Ipin',
+                'nama' => 'Burung Opila',
                 'kode' => 'A7',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Miky Mouse',
+                'nama' => 'Jombos',
                 'kode' => 'A8',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Doraemon',
+                'nama' => 'Dora',
                 'kode' => 'A9',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Spongebob Squarepants',
+                'nama' => 'Miky Mouse',
                 'kode' => 'A10',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Lagu Dangdut',
+                'nama' => 'Doraemon',
                 'kode' => 'A11',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Cocomelon',
+                'nama' => 'Spongebob Squarepants',
                 'kode' => 'A12',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Casper',
+                'nama' => 'Lagu Dangdut',
                 'kode' => 'A13',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Tayo',
+                'nama' => 'Cocomelon',
                 'kode' => 'A14',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'PORORO',
+                'nama' => 'Casper',
                 'kode' => 'A15',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Nusa Rara',
+                'nama' => 'Tayo',
                 'kode' => 'A16',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Tom & Jerry',
+                'nama' => 'PORORO',
                 'kode' => 'A17',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Shincan',
+                'nama' => 'Nusa Rara',
                 'kode' => 'A18',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ], 
+            ],
             [
-                'nama' => 'Adit dan Sopo Jarwo',
+                'nama' => 'Tom & Jerry',
                 'kode' => 'A19',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nama' => 'Dora',
+                'nama' => 'Shincan',
                 'kode' => 'A20',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+            ], 
+           
         ]);
 }
 }

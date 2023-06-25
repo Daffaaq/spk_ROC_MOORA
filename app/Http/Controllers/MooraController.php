@@ -13,7 +13,7 @@ class MooraController extends Controller
 
     public function matrix()
     {
-        $matrix = Helper::getMatrix();
+        $matrix = Helper::valMatrix();
 
         return view('moora.matrix', compact('matrix'));
     }
@@ -21,9 +21,10 @@ class MooraController extends Controller
     public function normalization()
     {
         $normal = Helper::valNormal();
-        $matrix = Helper::getMatrix();
-        // return $normal;
-        return view('moora.normalization', compact('normal', 'matrix'));
+        $matrix = Helper::valMatrix();
+        $criteria = Helper::getCriteria();
+
+        return view('moora.normalization', compact('normal', 'matrix', 'criteria'));
     }
     // public function normalization()
     // {

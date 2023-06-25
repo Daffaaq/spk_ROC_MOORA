@@ -72,12 +72,18 @@
                             </thead>
                             <tbody>
                                 @php
+                                    // Mengurutkan data peringkat berdasarkan kolom 'Benefit - Cost (Yi)' secara menurun
+                                    usort($rankingData, function ($a, $b) {
+                                        return $b['benefitMinusCost'] <=> $a['benefitMinusCost'];
+                                    });
+                                    
                                     $rank = 1;
                                 @endphp
                                 @foreach ($rankingData as $alternative_id => $data)
                                     <tr align="center">
                                         <td>{{ $rank++ }}</td>
-                                        <td>{{ $alternatives[$alternative_id] }}</td>
+                                        <td>{{ $alternatives[$data['alternative_id']] }}</td>
+                                        {{-- <td>{{ $alternatives[$alternative_id] }}</td> --}}
                                         <td>{{ number_format((float) $data['benefitTotal'], 4, '.', '') }}</td>
                                         <td>{{ number_format((float) $data['costTotal'], 4, '.', '') }}</td>
                                         <td>{{ number_format((float) $data['benefitMinusCost'], 4, '.', '') }}</td>

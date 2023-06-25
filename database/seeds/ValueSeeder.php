@@ -14,14 +14,14 @@ class ValueSeeder extends Seeder
     public function run()
     {
         $Aditdansopojarwo = [5, 5, 4, 5, 4, 1, 5, 5, 5, 4];
-        $Dora = [5, 5, 4, 5, 5, 4, 5, 4, 3, 5];
+        $UpinIpin = [5, 5, 4, 5, 5, 4, 5, 4, 3, 5];
         $Teletubise = [4, 4, 4, 4, 4, 5, 4, 4, 3, 5];
         $MashaandtheBear = [5, 5, 2, 4, 2, 5, 5, 3, 5, 5];
         $LaptopSiUnyil = [4, 5, 5, 5, 5, 4, 5, 5, 5, 5];
         $TheBossBaby = [5, 1, 3, 1, 3, 3, 5, 2, 4, 5];
         $Burungopila = [5, 5, 2, 5, 3, 4, 4, 3, 3, 4];
         $Jombos = [4, 5, 5, 5, 2, 3, 4, 5, 3, 4];
-        $UpinIpin = [5, 2, 5, 1, 5, 5, 5, 1, 5, 5];
+        $Dora = [5, 2, 5, 1, 5, 5, 5, 1, 5, 5];
         $Mikymouse = [5, 5, 4, 4, 4, 4, 3, 4, 3, 4];
         $Doraemon = [5, 3, 5, 3, 3, 3, 5, 3, 3, 5];
         $SpongebobSquarepants = [5, 2, 3, 1, 1, 4, 3, 3, 3, 4];
@@ -35,7 +35,26 @@ class ValueSeeder extends Seeder
         $Shincan = [3, 3, 3, 3, 3, 4, 4, 2, 5, 3];
 
         $ratings = array(
-            $Teletubise, $MashaandtheBear, $LaptopSiUnyil, $TheBossBaby, $Burungopila, $Jombos, $UpinIpin, $Mikymouse, $Doraemon, $SpongebobSquarepants, $LaguDangdut, $cocomelon, $Casper, $Tayo, $PORORO, $NusaRara, $TomJerry, $Shincan,  $Aditdansopojarwo, $Dora
+            $Aditdansopojarwo, 
+            $UpinIpin, 
+            $Teletubise, 
+            $MashaandtheBear, 
+            $LaptopSiUnyil, 
+            $TheBossBaby,
+            $Burungopila,
+            $Jombos,
+            $Dora,
+            $Mikymouse,
+            $Doraemon,
+            $SpongebobSquarepants,
+            $LaguDangdut,
+            $cocomelon,
+            $Casper,
+            $Tayo, 
+            $PORORO,
+            $NusaRara,
+            $TomJerry,
+            $Shincan, 
         );
 
 

@@ -2,8 +2,8 @@
 
 @section('content')
 
-@section('pages','admin')
-@section('title','dashboard')
+@section('pages', 'admin')
+@section('title', 'dashboard')
 
 <section class="section">
     <div class="row">
@@ -78,21 +78,25 @@
                     </h2>
                     <table width="100%" class="table table-striped table-bordered table-hover table-md">
                         <thead>
-                            <tr align="center">
-                                <th>Rank</th>
-                                <th>Alternatives</th>
-                                <th>Optimization</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($optimization as $optimization_id => $val)
-                            <tr align="center">
-                                <td>{{ $rank++ }}</td>
-                                <td>{{ $alternative[$optimization_id][0] }}</td>
-                                <td>{{ number_format((float)$optimization[$optimization_id], 3, '.', '') }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
+    <tr>
+        <th>Rank</th>
+        <th>Alternatives</th>
+        <th>Benefit - Cost (Yi)</th>
+    </tr>
+</thead>
+<tbody style="text-align:center; font-size:13px">
+    @php
+        $rank = 1;
+    @endphp
+    @foreach ($rangkeddataadmin as $alternative_id => $data)
+        <tr align="center">
+            <td>{{ $rank++ }}</td>
+            <td>{{ $alternatives[$alternative_id]}}</td>
+            <td>{{ number_format((float) $data['benefitMinusCost'], 4, '.', '') }}</td>
+        </tr>
+    @endforeach
+</tbody>
+
                     </table>
                 </div>
             </div>

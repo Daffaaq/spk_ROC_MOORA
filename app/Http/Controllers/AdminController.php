@@ -24,17 +24,13 @@ class AdminController extends Controller
         $countValues = Value::count();
         $countUsers = User::count();
 
-        $alternative = Helper::getAlternative();
+        $criteria = Helper::getCriteria();
+        $alternatives = Helper::getAlternative();
         $optimization = Helper::valOptimize();
+        $rangkeddataadmin = Helper::rankingadmin();
 
-        //--mengurutkan data secara descending dengan tetap mempertahankan key/index array-nya
-        arsort($optimization);
-        //-- mendapatkan key/index item array yang pertama
-        $index = key($optimization);
 
-        $rank = 1;
-
-        return view('admin/dashboard', compact('countAlternatives', 'countCriterias', 'countValues', 'countUsers', 'optimization', 'alternative', 'rank'));
+        return view('admin/dashboard', compact('countAlternatives', 'countCriterias', 'countValues', 'countUsers', 'optimization', 'alternatives', 'rangkeddataadmin'));
     }
 
     public function map()
@@ -300,5 +296,45 @@ class AdminController extends Controller
     public function editProfile()
     {
         return view('admin/profile');
+    }
+
+    public function importData(Request $request)
+    {
+        $request->validate([
+            'csv_file' => 'required|mimes:csv,txt',
+        ]);
+
+        $file = $request->file('csv_file');
+        $filePath = $file->getRealPath();
+
+        $handle = fopen($filePath, "r");
+        $header = fgetcsv($handle); // Baca baris header
+
+        $importedyoutube = [];
+
+        while (($data = fgetcsv($handle)) !== false) {
+            $youtube = new Criteria;
+            $youtube->nama = $data[0];
+            $youtube->alamat = $data[1];
+            $youtube->suasana = $data[2];
+            $youtube->kenyamanan = $data[3];
+            $youtube->kualitas = $data[4];
+            $youtube->harga = $data[5];
+            $youtube->wifi = $data[6];
+            $youtube->pelayanan = $data[7];
+            $youtube->kebersihan = $data[8];
+            $youtube->lokasi = $data[9];
+            $youtube->menu_unik = $data[10];
+            $youtube->respon_pelanggan = $data[11];
+            $youtube->save();
+
+            $importedyoutube[] = $youtube;
+        }
+
+        fclose($handle);
+
+        return redirect()->route('cafe.index')
+        ->with('success', 'Import data CSV berhasil.')
+        ->with('importedyoutube', $importedyoutube);
     }
 }

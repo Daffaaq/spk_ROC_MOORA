@@ -15,17 +15,17 @@
                             <thead>
                                 <tr align="center">
                                     <th>#</th>
-                                    @foreach (array_keys(current($matrix)) as $indexCriteria)
-                                        <th>C{{ $indexCriteria }}</th>
+                                    @foreach (array_keys(current($normal)) as $indexCriteria)
+                                        <th>{{ $criteria[$indexCriteria]['nama'] }}</th>
                                     @endforeach
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach (array_keys($matrix) as $indexAlternative)
+                                @foreach (array_keys($normal) as $indexAlternative)
                                     <tr align="center">
                                         <td>A{{ $indexAlternative }}</td>
-                                        @foreach (array_keys($matrix[$indexAlternative]) as $indexCriteria)
+                                        @foreach (array_keys($normal[$indexAlternative]) as $indexCriteria)
                                             <td>{{ number_format((float) $normal[$indexAlternative][$indexCriteria], 4, '.', '') }}
                                             </td>
                                         @endforeach
