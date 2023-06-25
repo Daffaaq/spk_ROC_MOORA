@@ -33,11 +33,6 @@ class AdminController extends Controller
         return view('admin/dashboard', compact('countAlternatives', 'countCriterias', 'countValues', 'countUsers', 'optimization', 'alternatives', 'rangkeddataadmin'));
     }
 
-    public function map()
-    {
-        return view('admin/map');
-    }
-
     function dataawalread()
     {
         $values = Value::all();
@@ -201,24 +196,7 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
-
-    public function classificationRead()
-    {
-        $classifications = Criteria::join('classifications', 'classifications.criteria_id', '=', 'criterias.id')->get();
-        return view('admin/classification', compact('classifications'));
-    }
-
-    public function classificationUpdate(Request $request)
-    {
-        $update = Classification::find($request->id);
-        $update->classification = $request->classification;
-        $update->save();
-
-        session()->flash('info', 'Classification updated');
-
-        return redirect(route('classification.read'));
-    }
-
+    
     public function userRead()
     {
         $users = User::get();

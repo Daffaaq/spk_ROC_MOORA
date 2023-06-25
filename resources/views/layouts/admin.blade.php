@@ -66,9 +66,6 @@
                         <li class="nav-item {{ (request()->is('admin/dashboard')) ? "active" : '' }}"><a
                                 class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-fire"></i>
                                 <span>Dashboard</span></a></li>
-                        <li class="nav-item {{ (request()->is('admin/map')) ? "active" : '' }}"><a class="nav-link"
-                                href="{{ route('admin.map') }}"><i class="fas fa-map"></i>
-                                <span>Map</span></a></li>
                         <li class="menu-header">Info</li>
                         <li class="nav-item {{ (request()->is('admin/dataawal')) ? "active" : '' }}"><a
                                 class="nav-link" href="{{ route('dataawal.read') }}"><i class="fas fa-database"></i>
@@ -99,9 +96,6 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="nav-item {{ (request()->is('admin/classification')) ? "active" : '' }}"><a
-                                class="nav-link" href="{{ route('classification.read') }}"><i class="far fa-square"></i>
-                                <span>Classification</span></a></li>
                         <li class="menu-header">Equation</li>
                         <li class="nav-item dropdown {{ (request()->is('admin/moora*')) ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
